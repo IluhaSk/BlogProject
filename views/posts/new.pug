@@ -1,0 +1,17 @@
+extends ../layouts/app.pug
+
+block content
+	form(action = "/posts", method ="post")
+		div(class='mx-auto')
+			label Create new post
+				div(class='input-group mb-3')
+					div(class='input-group-prepend')
+						span(class='input-group-text') Title of new post
+					input(type='text', class='form-control', name='title') 
+
+				div(class='input-group mb-3')
+					div(class='input-group-prepend')
+						span(class='input-group-text') Text of new post
+					textarea(type='text', class='form-control', name ='body')
+				div(class='input-group mb-3')
+					button(class='btn btn-primary', type='submit') Save

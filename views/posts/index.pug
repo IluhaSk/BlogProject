@@ -1,0 +1,10 @@
+extends ../layouts/app.pug
+
+block content
+	
+	each post in posts
+		div(class='col-sm-6', class='mx-auto')
+			div(class='card', class ='m-1', class='bg-gradient-dark')
+				h5(class='card-title') #{post.title}
+				p(class='card-text') #{post.body}		
+				a( class ='btn', href =`/posts/+${post.id}`) Open
