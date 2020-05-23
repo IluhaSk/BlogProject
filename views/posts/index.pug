@@ -1,10 +1,15 @@
 extends ../layouts/app.pug
 
 block content
-	
-	each post in posts
-		div(class='col-sm-6', class='mx-auto')
-			div(class='card', class ='m-1', class='bg-gradient-dark')
-				h5(class='card-title') #{post.title}
-				p(class='card-text') #{post.body}		
-				a( class ='btn', href =`/posts/+${post.id}`) Open
+	div(class='row')
+		each post in posts
+				div(class='col-sm-4')
+					div(class='card', class ='m-1', class='bg-light')
+						div(class='card-body')
+							h5(class='card-title ') #{post.title}
+							p(class='card-text') #{post.body}	
+							div(class='row mx-auto')
+								a( class ='btn btn-dark m-1 ', href =`/posts/${post.id}`) Open
+								a( class ='btn btn-dark m-1 ', href =`/posts/${post.id}/edit`) Edit
+								form(action=`/posts/${post.id}/?_method=DELETE`, method = 'post')
+									button(class ='btn btn-dark m-1 ', type='submit') Delete
